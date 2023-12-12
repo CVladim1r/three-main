@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: linear-gradient(to top, #77204c, #77204c);
+}
+
+.canvas {
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --headline-color: white;
+  --background-color: #11151c;
+  --text-color: rgba(255, 255, 255, 0.5);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--background-color);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Стили для хедера */
+.canvas-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.headline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+#text-behind, #text-front, #text-behind-blur {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  text-align: center;
+  font-size: clamp(24px, 20vw, 200px);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 10px;
+  line-height: 0.8;
+}
+
+#text-behind {
+  color: var(--headline-color);
+  z-index: 1;
+}
+
+#text-behind-blur {
+  color: var(--headline-color);
+  filter: blur(7.5px);
+  -webkit-filter: blur(7.5px);
+  z-index: 0;
+}
+
+#text-front {
+  /* Set text-color to transparent to only show the outline */
+  color: transparent;
+  text-stroke: 2px var(--headline-color);
+  -webkit-text-stroke: 2px var(--headline-color);
+  z-index: 3;
+}
+
+/* Добавленные стили для блоков секций */
+
+.banner {
+  padding: 720px 20px;
+
+  color: white;
+  background: linear-gradient(to right, #ffcc00, #ff66b2);
+}
+
+.virtual-try-on,
+.technology,
+.available-apps,
+.ar-in-fashion,
+.about-us,
+.contact {
+  padding: 80px 20px;
+  color: white;
+}
+
+/* Стили для 3D модели */
+.canvas-container {
+  border-radius: 20px; /* Добавляем скругленные углы */
+  overflow: hidden; /* Скрытие лишнего контента за пределами блока */
+}
+
+/* Стили для текстовых блоков */
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Стили для footer */
+footer {
+  background: linear-gradient(to top, #361626, #77204c);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Стили для ссылок в footer */
+.footer-links {
+  margin-top: 20px;
+  padding-bottom: 25px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 20px 20px;
+  transition: color 0.3s ease;
+  
+}
+
+.footer-links a:hover {
+  color: #ffcc00; /* Цвет при наведении */
+}
+.ua-ebal-twoi-rot{
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+
+/* Стили для .main-content */
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Добавлены анимации для текстовых элементов */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Применение анимации к текстовым элементам */
+h1, h2, p {
+  animation: fadeIn 1s ease-out;
+}
+
+
+.content-container {
+  display: flex;
+  max-width: 1200px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
+.text-column {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+}
+
+.image-column {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-column img {
+  max-width: 100%; /* Ensure the image doesn't exceed its container */
+  height: auto;
+  display: block; /* Remove any default inline spacing */
+  margin: 0 auto; /* Center the image horizontally within its container */
+}
